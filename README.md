@@ -1,0 +1,2 @@
+# sparkline-nim
+Sparkline library
