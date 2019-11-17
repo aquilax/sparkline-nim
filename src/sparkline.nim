@@ -1,6 +1,12 @@
-# This is just an example to get you started. A typical library package
-# exports the main API in this file. Note that you cannot rename this file
-# but you can remove it if you wish.
+## Library for converting sequence of numbers to console friendly sparkline
+##
+## Example
+## ========
+##
+## .. code-block:: nim
+##
+##   doAssert sparkline(@[1, 0, 0, 1]) == "█▁▁█"
+##
 
 import unicode
 
@@ -26,6 +32,7 @@ proc normalize[T: SomeNumber](nums: seq[T]): seq[int] =
 
 
 proc sparkline*[T: SomeNumber](nums: seq[T]): string =
+  ## Generates sparkline string for the provided sequence of numbers
   if nums.len == 0:
     return ""
   let indexes = normalize(nums)
